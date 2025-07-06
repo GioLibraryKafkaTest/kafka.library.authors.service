@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\kafka.authors.domain\kafka.authors.domain.csproj" />
-  </ItemGroup>
-
 </Project>
