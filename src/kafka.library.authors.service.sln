@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kafka.authors.domain", "CQRS\Command\Core\kafka.authors.domain\kafka.authors.domain.csproj", "{2873A1D3-0EB1-40CE-92CE-CA355CD385A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kafka.authors.application", "CQRS\Command\Core\kafka.authors.application\kafka.authors.application.csproj", "{96F0E2EA-2FA3-45DC-812A-91AEB696A892}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2873A1D3-0EB1-40CE-92CE-CA355CD385A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2873A1D3-0EB1-40CE-92CE-CA355CD385A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2873A1D3-0EB1-40CE-92CE-CA355CD385A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F0E2EA-2FA3-45DC-812A-91AEB696A892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F0E2EA-2FA3-45DC-812A-91AEB696A892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F0E2EA-2FA3-45DC-812A-91AEB696A892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F0E2EA-2FA3-45DC-812A-91AEB696A892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{524B79B5-704F-43A2-ABED-96EE5E65D5AA} = {72BD76FA-A7D5-44A8-B4A4-52FBB69B398C}
 		{9E1513F4-8989-4967-AFA2-5CA27CB3BA83} = {72BD76FA-A7D5-44A8-B4A4-52FBB69B398C}
 		{2873A1D3-0EB1-40CE-92CE-CA355CD385A9} = {DDD184E3-EF97-4B6F-A727-202415B24830}
+		{96F0E2EA-2FA3-45DC-812A-91AEB696A892} = {DDD184E3-EF97-4B6F-A727-202415B24830}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A76FAA69-CFB4-4924-B251-A3B286B099E2}
