@@ -35,7 +35,7 @@ public class AuthorAggregate : AggregateRoot
     if (!Active)
       throw new InvalidOperationException("No se puede editar un autor inactivo");
 
-    RaiseEvent(new AuthorCreatedEvent
+    RaiseEvent(new AuthorUpdatedEvent
     {
       Id = Id,
       AuthorFirstName = authorFirstName,
@@ -44,5 +44,9 @@ public class AuthorAggregate : AggregateRoot
     });
   }
 
-  //public void Apply()
+  public void Apply(AuthorUpdatedEvent @event)
+  {
+    _id = @event.Id;
+    Active = true;
+  }
 }

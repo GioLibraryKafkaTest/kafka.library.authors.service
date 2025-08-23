@@ -1,4 +1,5 @@
 ﻿using kafka.authors.application.Features.Authors;
+using kafka.authors.application.Features.Authors.UpdateAuthor;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,13 @@ public class AuthorController : ControllerBase
   {
     string id = Guid.CreateVersion7(DateTimeOffset.UtcNow).ToString();
     AuthorCreateCommand command = new(id, request);
+    return Ok(await mediator.Send(command));
+  }
+
+  [HttpPut]
+  public async Task<ActionResult> Put([FromBody] UpdateAuthorRequest request)
+  {
+    UpdateAuthorCommand command = new(request);
     return Ok(await mediator.Send(command));
   }
 }

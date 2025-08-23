@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "CQRS\\Command\\Api\\kafka.authors.api\\kafka.authors.api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "CQRS\\Query\\Api\\kafka.authors.api\\kafka.authors.api.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

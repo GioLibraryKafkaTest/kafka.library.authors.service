@@ -23,6 +23,7 @@ public static class InfraestructureServiceRegistration
   {
     BsonClassMap.RegisterClassMap<BaseEvent>();
     BsonClassMap.RegisterClassMap<AuthorCreatedEvent>();
+    BsonClassMap.RegisterClassMap<AuthorUpdatedEvent>();
 
     services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
     services.AddTransient<IEventModelRepository, EventModelRepository>();
