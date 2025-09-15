@@ -47,7 +47,6 @@ public static class InfraestructureServiceRegistration
 
     services.Configure<ConsumerConfig>(configuration.GetSection(nameof(ConsumerConfig)));
 
-
     return services;
   }
 }

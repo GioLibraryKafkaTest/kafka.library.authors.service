@@ -1,5 +1,6 @@
 ﻿
 using Confluent.Kafka;
+using library.core.domain._Constants;
 using library.core.domain.Consumers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +30,7 @@ public class ConsumerHostedService
   public Task StartAsync(CancellationToken cancellationToken)
   {
     logger.LogInformation("Event consumer is working");
-    var topic = "KAFKA_TOPIC";
+    var topic = KafkaConnection.Author_Topic;
 
     using(IServiceScope scope = serviceProvider.CreateAsyncScope())
     {

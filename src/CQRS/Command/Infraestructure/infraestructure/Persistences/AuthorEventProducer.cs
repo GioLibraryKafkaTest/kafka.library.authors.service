@@ -5,22 +5,20 @@ using Microsoft.Extensions.Options;
 
 using Confluent.Kafka;
 using Newtonsoft.Json;
+using library.core.domain._Constants;
 
 namespace infraestructure.Persistences;
 public class AuthorEventProducer
 : IEventProducer
 {
-  private readonly KafkaSettings kafkaSettings;
-
-  public AuthorEventProducer(IOptions<KafkaSettings> kafkaSettings)
+  public AuthorEventProducer()
   {
-    this.kafkaSettings = kafkaSettings.Value;
   }
   public async Task ProducerAsync(string topic, BaseEvent @event)
   {
     var config = new ProducerConfig
     {
-      BootstrapServers = $"{kafkaSettings.Hostname}: {kafkaSettings.Port}"
+      BootstrapServers = $"{KafkaConnection.Kafka_HostName}: {KafkaConnection.Kafka_Port}"
     };
 
     using var producer = new ProducerBuilder<string, string>(config)

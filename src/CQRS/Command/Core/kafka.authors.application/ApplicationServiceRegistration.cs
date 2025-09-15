@@ -13,7 +13,7 @@ public static class ApplicationServiceRegistration
   {
     service.Configure<MongoSettings>(configuration.GetSection(nameof(MongoSettings)));
     
-    service.Configure<KafkaSettings>(configuration.GetSection(nameof(KafkaSettings)));
+    //service.Configure<KafkaSettings>(configuration.GetSection(nameof(KafkaSettings)));
 
     service.AddMediatR(cfg =>
     {

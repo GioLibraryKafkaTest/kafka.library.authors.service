@@ -35,6 +35,7 @@ public class EventConsumer : IEventConsumer
 
     while (true)
     {
+      
       var consumerResult = consumer.Consume();
 
       if (consumerResult is null)

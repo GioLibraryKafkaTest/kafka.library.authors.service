@@ -1,6 +1,7 @@
 ﻿using kafka.authors.application.Models;
 using kafka.authors.domain.Abstracts;
 using kafka.authors.domain.EventModels;
+using library.core.domain._Constants;
 using library.core.domain.Events;
 using library.core.domain.Producers;
 using Microsoft.Extensions.Options;
@@ -11,18 +12,15 @@ public class EventStore
 : IEventStore
 {
   private readonly IEventModelRepository eventModelRepository;
-  private readonly KafkaSettings kafkaSettings;
   private readonly IEventProducer eventProducer;
 
   public EventStore
   (
     IEventModelRepository eventModelRepository,
-    IOptions<KafkaSettings> settings,
     IEventProducer eventProducer
   )
   {
     this.eventModelRepository = eventModelRepository;
-    this.kafkaSettings = settings.Value;
     this.eventProducer = eventProducer;
   }
   public async Task<List<BaseEvent>> GetEventAsync(string aggregateId, CancellationToken cancellationToken)
@@ -62,9 +60,10 @@ public class EventStore
 
       await AddEventStore(eventModel, cancellationToken);
 
-      var topic = kafkaSettings.Topic ?? throw new Exception("KafkaSettings topic not defined");
-
-      await eventProducer.ProducerAsync(topic, @event);
+      foreach (var topic in KafkaConnection.Author_Topics)
+      {
+        await eventProducer.ProducerAsync(topic, @event);
+      }
     }
   }
 
